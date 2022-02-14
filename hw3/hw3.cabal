@@ -1,0 +1,121 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hw3
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/hw3#readme>
+homepage:       https://github.com/githubuser/hw3#readme
+bug-reports:    https://github.com/githubuser/hw3/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/hw3
+
+library
+  exposed-modules:
+      HW3.Action
+      HW3.Base
+      HW3.Common
+      HW3.Evaluator
+      HW3.Parser
+      HW3.Pretty
+  other-modules:
+      Paths_hw3
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bits
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , prelude-safeenum
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , random
+    , scientific
+    , serialise
+    , text
+    , time
+    , transformers
+    , utf8-string
+    , zlib
+  default-language: Haskell2010
+
+executable hw3
+  main-is: Main.hs
+  other-modules:
+      Paths_hw3
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , haskeline
+    , hw3
+    , mtl
+  default-language: Haskell2010
+
+test-suite hw3-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      SpecS
+      T10Spec
+      T11Spec
+      T1Spec
+      T2Spec
+      T3Spec
+      T4Spec
+      T5Spec
+      T6Spec
+      T8Spec
+      Paths_hw3
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  cpp-options: -DHI_TEST_UPTO=10
+  build-tool-depends:
+      hspec-discover:hspec-discover
+  build-depends:
+      HUnit
+    , base >=4.7 && <5
+    , containers
+    , directory
+    , either
+    , filepath
+    , hedgehog
+    , hspec
+    , hspec-hedgehog
+    , hw3
+    , megaparsec
+    , mtl
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , raw-strings-qq
+    , scientific
+    , tasty
+    , tasty-hedgehog
+    , tasty-hspec
+    , tasty-hunit
+    , tasty-quickcheck
+    , tasty-smallcheck
+    , template-haskell
+    , text
+  default-language: Haskell2010
