@@ -1,8 +1,5 @@
 # Hi-language-Haskell-course 👋
 
-Hi(experimental language) lang interpreter + repl
-
-In this homework we will gradually develop a small programming language called Hi.
 
 Project Structure
 -----------------
